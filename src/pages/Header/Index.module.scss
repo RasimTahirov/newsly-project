@@ -1,0 +1,50 @@
+.header {
+  padding: 1rem;
+  border-bottom: 1px solid #000;
+  margin-bottom: 25px;
+  color: rgb(15, 15, 15);
+  font-family: 'Feature Mono';
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.containerLogo {
+  display: grid;
+  align-items: center;
+}
+
+.containerTime {
+  display: grid;
+  text-align: center;
+  margin: 0 auto;
+  gap: 5px;
+}
+
+.logoTitle {
+  display: flex;
+  justify-self: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  max-width: 90px;
+  max-height: 90px;
+}
+
+.date,
+.time {
+  display: flex;
+  justify-content: center;
+}
+
+.currencyRates {
+  display: grid;
+  gap: 5px;
+}
