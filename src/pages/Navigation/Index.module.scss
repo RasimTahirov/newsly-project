@@ -1,0 +1,25 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  border-bottom: 1px solid #111;
+}
+
+.navList {
+  display: flex;
+  gap: 10px;
+}
+
+.navLink {
+  padding: 5px 10px;
+  color: rgb(15, 15, 15);
+  font-family: 'Feature Mono';
+  font-size: 1rem;
+  font-weight: 400;
+  transition: ease 0.3s;
+}
+
+.navLink:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
