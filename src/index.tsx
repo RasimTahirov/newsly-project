@@ -7,7 +7,7 @@ import './styles/index.scss';
 import './styles/reset.scss';
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <Main />
-  </StrictMode>
+  // <StrictMode>
+  <Main />
+  // </StrictMode>
 );

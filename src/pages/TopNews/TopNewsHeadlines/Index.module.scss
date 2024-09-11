@@ -1,0 +1,44 @@
+.newsHeadlinesContainer {
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.newsTitle {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: 'Feature Mono';
+  font-size: 1.5rem;
+  font-weight: 800;
+  border-bottom: 1px solid #000;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.newsListWrapper {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.newsList {
+  display: grid;
+  gap: 10px;
+}
+
+.newsListItem {
+  list-style: square;
+  font-weight: 400;
+}
+
+.newsListItem:first-child {
+  font-weight: 600;
+}
+
+.newsLink {
+  color: #000;
+  transition: 0.3s ease;
+}
+
+.newsLink:hover {
+  color: #6e0c0c;
+}
