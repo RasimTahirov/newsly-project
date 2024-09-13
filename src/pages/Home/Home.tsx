@@ -5,10 +5,10 @@ import styles from './Index.module.scss';
 
 const Home = () => {
   return (
-    <div className={styles.selection}>
+    <section className={styles.selection}>
       <TopNewsWithImages />
       <TopNewsHeadlines />
-    </div>
+    </section>
   );
 };
 

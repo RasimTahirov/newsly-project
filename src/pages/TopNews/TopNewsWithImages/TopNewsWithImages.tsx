@@ -1,56 +1,51 @@
-import { useEffect, useState } from 'react';
-// import { news } from '../utils/utils';
+// import { newsCard } from '../../utils/utils'; // Проверка при лимите API
+
+import { formateDateTime } from '../../../utils/formateDateTime';
+import { useFetchNews } from '../helpers/hooks/useFetchNews';
+import { TopNews } from '../helpers/type/type';
 
 import styles from './Index.module.scss';
-import { getTopNews } from '../../../api/api';
 
 const TopNewsWithImages = () => {
-  const [news, setNews] = useState([]);
-
-  const formateDateTime = (dateTime) => {
-    const date = new Date(dateTime);
-    const formattedDate = date.toISOString().split('T')[0];
-    const formattedTime = date.toTimeString().split(':').slice(0, 2).join(':');
-
-    return `${formattedDate} / ${formattedTime}`;
-  };
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      const data = await getTopNews();
-      setNews(data);
-    };
-
-    fetchNews();
-  }, []);
+  const newsCard: TopNews[] = useFetchNews();
 
   return (
-    <>
-      <div className={styles.newsWithImagesContainer}>
-        {news.map((item) => (
-          <div key={item.uuid} className={styles.newsCard}>
-            <a href={item.url}>
-              <img src={item.image_url} alt="" className={styles.newsImage} />
+    <div className={styles.newsWithImagesContainer}>
+      {newsCard.map((news) => (
+        <div key={news.uuid} className={styles.newsCard}>
+          <a href={news.url} target="_blank" rel="noopener noreferrer">
+            <img
+              src={news.image_url}
+              alt={news.title}
+              className={styles.newsImage}
+            />
+          </a>
+          <div className={styles.newsSourceAndDate}>
+            <a
+              href={news.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.newsText}
+            >
+              {news.source}
             </a>
-            <div className={styles.newsSourceAndDate}>
-              <a href={item.url} className={styles.newsText}>
-                {item.source}
-              </a>
-              <p className={styles.time}>
-                {formateDateTime(item.published_at)}
-              </p>
-            </div>
-            <div className={styles.newsTitleWrapper}>
-              <p className={styles.newsText}>
-                <a href={item.url} className={styles.newsText}>
-                  {item.title}
-                </a>
-              </p>
-            </div>
+            <p className={styles.time}>{formateDateTime(news.published_at)}</p>
           </div>
-        ))}
-      </div>
-    </>
+          <div className={styles.newsTitleWrapper}>
+            <p className={styles.newsText}>
+              <a
+                href={news.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.newsText}
+              >
+                {news.title}
+              </a>
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
   );
 };
 

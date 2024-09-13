@@ -28,13 +28,13 @@ export const newsList = [
     title:
       'Jordan Chiles Talks Racist Backlash After Bronze Medal Was Stripped',
   },
-  {
-    title:
-      'What’s best case scenario for Bichette’s return to Blue Jays lineup?',
-  },
-  {
-    title: 'BNDES vai injetar R$ 2 bilhões em novos data centers no país',
-  },
+  // {
+  //   title:
+  //     'What’s best case scenario for Bichette’s return to Blue Jays lineup?',
+  // },
+  // {
+  //   title: 'BNDES vai injetar R$ 2 bilhões em novos data centers no país',
+  // },
   // {
   //   title: 'BNDES vai injetar R$ 2 bilhões em novos data centers no país',
   // },

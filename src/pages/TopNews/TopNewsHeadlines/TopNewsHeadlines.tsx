@@ -1,30 +1,27 @@
-import { useEffect, useState } from 'react';
-// import { newsList } from '../utils/utils2';
+// import { newsList } from '../../utils/utils2'; // Проверка при лимите API
+
+import { useFetchNews } from '../helpers/hooks/useFetchNews';
+import { TopNews } from '../helpers/type/type';
 
 import styles from './Index.module.scss';
-import { getTopNews } from '../../../api/api';
 
 const TopNewsHeadlines = () => {
-  const [newsList, setNewsList] = useState([]);
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      const data = await getTopNews();
-      setNewsList(data);
-    };
-
-    fetchNews();
-  }, []);
+  const newsList: TopNews[] = useFetchNews();
 
   return (
     <div className={styles.newsHeadlinesContainer}>
       <h3 className={styles.newsTitle}>главные новости</h3>
       <div className={styles.newsListWrapper}>
         <ul className={styles.newsList}>
-          {newsList.map((list) => (
-            <li key={list.id} className={styles.newsListItem}>
-              <a href={list.url} className={styles.newsLink}>
-                {list.title}
+          {newsList.map((news) => (
+            <li key={news.uuid} className={styles.newsListItem}>
+              <a
+                href={news.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.newsLink}
+              >
+                {news.title}
               </a>
             </li>
           ))}

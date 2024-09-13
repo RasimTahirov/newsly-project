@@ -1,6 +1,6 @@
 import img1 from './img/0910-cmo-debateanalysis-costa-mid.jpg';
 
-export const news = [
+export const newsCard = [
   {
     title:
       'Sony unveils upgraded PlayStation 5 Pro to boost slowing console business',
