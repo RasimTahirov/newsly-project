@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getTopNews } from '../../../../api/api';
+import { getTopNews } from '../../../../services/api/api';
 
 export const useFetchNews = () => {
   const [news, setNews] = useState([]);
