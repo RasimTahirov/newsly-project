@@ -1,5 +1,5 @@
-import TopNewsHeadlines from '../TopNews/TopNewsHeadlines/TopNewsHeadlines';
-import TopNewsWithImages from '../TopNews/TopNewsWithImages/TopNewsWithImages';
+import TopNewsHeadlines from '../../components/TopNews/TopNewsHeadlines/TopNewsHeadlines';
+import TopNewsWithImages from '../../components/TopNews/TopNewsWithImages/TopNewsWithImages';
 
 import styles from './Index.module.scss';
 

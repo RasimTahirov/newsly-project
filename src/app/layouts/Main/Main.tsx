@@ -1,8 +1,8 @@
 import styles from './Index.module.scss';
 
-import Header from '../Header/Header';
-import Navigation from '../Navigation/Navigation';
-import Home from '../Home/Home';
+import Header from '../../../components/Header/Header';
+import Navigation from '../../../components/Navigation/Navigation';
+import Home from '../../../pages/Home/Home';
 
 const Main = () => {
   return (
