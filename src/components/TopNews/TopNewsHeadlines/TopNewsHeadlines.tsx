@@ -1,4 +1,6 @@
-// import { newsList } from '../../utils/utils2'; // Проверка при лимите API
+
+import { newsList } from '../../../pages/utils/utils2'; // Проверка при лимите API
+
 
 import { useFetchNews } from '../helpers/hooks/useFetchNews';
 import { TopNews } from '../helpers/type/type';

@@ -2,14 +2,16 @@ import styles from './Index.module.scss';
 
 import Header from '../../../components/Header/Header';
 import Navigation from '../../../components/Navigation/Navigation';
-import Home from '../../../pages/Home/Home';
+
+import AppRoutes from '../../routes/AppRoutes';
+
 
 const Main = () => {
   return (
     <div className={styles.container}>
       <Header />
       <Navigation />
-      <Home />
+      <AppRoutes />
     </div>
   );
 };
