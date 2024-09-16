@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './Index.module.scss';
 
 const Navigation = () => {
@@ -5,24 +6,24 @@ const Navigation = () => {
     <div className={styles.nav}>
       <ul className={styles.navList}>
         <li className={styles.navItem}>
-          <a href="#" className={styles.navLink}>
+          <Link to="/" className={styles.navLink}>
             Главная
-          </a>
+          </Link>
         </li>
         <li className={styles.navItem}>
-          <a href="#" className={styles.navLink}>
+          <Link to="/news" className={styles.navLink}>
             Новости
-          </a>
+          </Link>
         </li>
         <li className={styles.navItem}>
-          <a href="#" className={styles.navLink}>
+          <Link to="weather" className={styles.navLink}>
             Погода
-          </a>
+          </Link>
         </li>
         <li className={styles.navItem}>
-          <a href="#" className={styles.navLink}>
+          <Link to="test3" className={styles.navLink}>
             Курс
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
