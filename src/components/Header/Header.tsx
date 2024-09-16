@@ -23,7 +23,6 @@ const Header = () => {
       <div className={styles.container}>
         <div className={styles.containerLogo}>
           <img src={logo} alt="logo" className={styles.logo} />
-          <span className={styles.logoTitle}>newsly</span>
         </div>
         <div className={styles.containerTime}>
           <span className={styles.date}>{formattedDate}</span>
