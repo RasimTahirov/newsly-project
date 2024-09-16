@@ -1,4 +1,4 @@
-// import { newsCard } from '../../utils/utils'; // Проверка при лимите API
+import { newsCard } from '../../../pages/utils/utils'; // Проверка при лимите API
 
 import { formateDateTime } from '../../../utils/formateDateTime';
 import { useFetchNews } from '../helpers/hooks/useFetchNews';
@@ -7,7 +7,7 @@ import { TopNews } from '../helpers/type/type';
 import styles from './Index.module.scss';
 
 const TopNewsWithImages = () => {
-  const newsCard: TopNews[] = useFetchNews();
+  // const newsCard: TopNews[] = useFetchNews();
 
   return (
     <div className={styles.newsWithImagesContainer}>
