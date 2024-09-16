@@ -1,4 +1,6 @@
+
 import { newsList } from '../../../pages/utils/utils2'; // Проверка при лимите API
+
 
 import { useFetchNews } from '../helpers/hooks/useFetchNews';
 import { TopNews } from '../helpers/type/type';
@@ -6,7 +8,7 @@ import { TopNews } from '../helpers/type/type';
 import styles from './Index.module.scss';
 
 const TopNewsHeadlines = () => {
-  // const newsList: TopNews[] = useFetchNews();
+  const newsList: TopNews[] = useFetchNews();
 
   return (
     <div className={styles.newsHeadlinesContainer}>
