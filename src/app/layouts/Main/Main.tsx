@@ -5,7 +5,6 @@ import Navigation from '../../../components/Navigation/Navigation';
 
 import AppRoutes from '../../routes/AppRoutes';
 
-
 const Main = () => {
   return (
     <div className={styles.container}>

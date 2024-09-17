@@ -1,8 +1,12 @@
+import AllNews from '../../components/AllNews/AllNews';
+
+import styles from './Index.module.scss';
+
 const News = () => {
   return (
-    <div>
-      <h1>тут будут новости</h1>
-    </div>
+    <section className={styles.sectionNews}>
+      <AllNews />
+    </section>
   );
 };
 

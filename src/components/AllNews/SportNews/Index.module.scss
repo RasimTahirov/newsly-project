@@ -1,0 +1,50 @@
+.newsCardContainer {
+  display: grid;
+  justify-content: center;
+}
+
+.imgCard {
+  max-width: 340px;
+  display: grid;
+  margin-bottom: 20px;
+}
+
+.categoryLabel {
+  background-color: #6e0c0c;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+  cursor: default;
+}
+
+.newsCard {
+  overflow: hidden;
+  gap: 5px;
+  display: grid;
+}
+
+.newsTitle {
+  transition: 0.5s ease;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.imageWrapper {
+  overflow: hidden;
+}
+
+.newsImage {
+  transition: 0.5s ease;
+}
+
+.newsCard:hover {
+  .newsImage {
+    transform: scale(1.1);
+  }
+
+  .newsTitle {
+    text-decoration: underline;
+  }
+}
