@@ -1,4 +1,4 @@
-import { formateDateTime } from '../../../utils/formateDateTime';
+import { formateDateTime } from '../../../../../utils/formateDateTime';
 import { useFetchAllNews } from '../helpers/hooks/useFetchNews';
 import { TopNews } from '../helpers/type/type';
 

@@ -1,11 +1,13 @@
-import AllNews from '../../components/AllNews/AllNews';
+import EventsTodayNews from '../../components/News/Display/EventsTodayNews/EventsTodayNews';
 
 import styles from './Index.module.scss';
 
 const News = () => {
   return (
     <section className={styles.sectionNews}>
-      <AllNews />
+      <div>
+        <EventsTodayNews />
+      </div>
     </section>
   );
 };
