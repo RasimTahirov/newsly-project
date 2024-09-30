@@ -1,14 +1,14 @@
 import axios from 'axios';
 
 const API_URL = 'https://api.currentsapi.services/v1/latest-news';
-const API_KRY = '6tw1ED6gRz2tQEVdMBW9QFyp-wLB4ulNP-efqNgwHsJ5d-iL';
+const API_KEY = '6tw1ED6gRz2tQEVdMBW9QFyp-wLB4ulNP-efqNgwHsJ5d-iL';
 
-export const getFilmsNews = async () => {
+export const getNewsByCategory = async (category: string) => {
   try {
     const res = await axios.get(API_URL, {
       params: {
-        apiKey: API_KRY,
-        category: 'movie',
+        apiKey: API_KEY,
+        category: category, // динамическая категория
       },
     });
     return res.data.news;

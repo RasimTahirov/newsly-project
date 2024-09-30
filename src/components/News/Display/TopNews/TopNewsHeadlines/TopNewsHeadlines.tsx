@@ -8,7 +8,7 @@ const TopNewsHeadlines = () => {
 
   return (
     <div className={styles.newsHeadlinesContainer}>
-      <h3 className={styles.newsTitle}>главные новости</h3>
+      <h3 className={styles.newsTitle}>Top Stories</h3>
       <div className={styles.newsListWrapper}>
         <ul className={styles.newsList}>
           {newsList.map((news) => (

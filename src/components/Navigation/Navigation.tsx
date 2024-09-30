@@ -1,32 +1,33 @@
-import { Link } from 'react-router-dom';
-import styles from './Index.module.scss';
+import { NavLink } from 'react-router-dom';
+
+import './Index.scss';
 
 const Navigation = () => {
   return (
-    <div className={styles.nav}>
-      <ul className={styles.navList}>
-        <li className={styles.navItem}>
-          <Link to="/" className={styles.navLink}>
+    <nav className="nav">
+      <ul className="navList">
+        <li className="navItem">
+          <NavLink to="/" className="navLink">
             Главная
-          </Link>
+          </NavLink>
         </li>
-        <li className={styles.navItem}>
-          <Link to="/news" className={styles.navLink}>
+        <li className="navItem">
+          <NavLink to="/news" className="navLink">
             Новости
-          </Link>
+          </NavLink>
         </li>
-        <li className={styles.navItem}>
-          <Link to="weather" className={styles.navLink}>
+        <li className="navItem">
+          <NavLink to="weather" className="navLink">
             Погода
-          </Link>
+          </NavLink>
         </li>
-        <li className={styles.navItem}>
-          <Link to="test3" className={styles.navLink}>
+        <li className="navItem">
+          <NavLink to="test3" className="navLink">
             Курс
-          </Link>
+          </NavLink>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 };
 

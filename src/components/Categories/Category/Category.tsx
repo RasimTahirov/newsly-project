@@ -8,32 +8,32 @@ const Category = () => {
       <nav className={styles.hubMenuNav}>
         <ul className={styles.hubMenuList}>
           <li className={styles.hubMenuItem}>
-            <Link to="/politics" className={styles.hubMenuLink}>
+            <Link to="/news/politics" className={styles.hubMenuLink}>
               Политика
             </Link>
           </li>
           <li className={styles.hubMenuItem}>
-            <Link to="/world" className={styles.hubMenuLink}>
+            <Link to="/news/world" className={styles.hubMenuLink}>
               Мир
             </Link>
           </li>
           <li className={styles.hubMenuItem}>
-            <Link to="/economy" className={styles.hubMenuLink}>
+            <Link to="/news/economy" className={styles.hubMenuLink}>
               Экономика
             </Link>
           </li>
           <li className={styles.hubMenuItem}>
-            <Link to="/movies" className={styles.hubMenuLink}>
+            <Link to="/news/movie" className={styles.hubMenuLink}>
               Новости кино
             </Link>
           </li>
           <li className={styles.hubMenuItem}>
-            <Link to="games" className={styles.hubMenuLink}>
+            <Link to="/news/game" className={styles.hubMenuLink}>
               Новости геймдева
             </Link>
           </li>
           <li className={styles.hubMenuItem}>
-            <Link to="sports" className={styles.hubMenuLink}>
+            <Link to="/news/sports" className={styles.hubMenuLink}>
               Спорт
             </Link>
           </li>
