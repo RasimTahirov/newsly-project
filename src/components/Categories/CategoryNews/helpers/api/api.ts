@@ -8,7 +8,7 @@ export const getNewsByCategory = async (category: string) => {
     const res = await axios.get(API_URL, {
       params: {
         apiKey: API_KEY,
-        category: category, // динамическая категория
+        category: category,
       },
     });
     return res.data.news;

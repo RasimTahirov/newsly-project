@@ -17,12 +17,12 @@ const Navigation = () => {
           </NavLink>
         </li>
         <li className="navItem">
-          <NavLink to="weather" className="navLink">
+          <NavLink to="/weather" className="navLink">
             Weather
           </NavLink>
         </li>
         <li className="navItem">
-          <NavLink to="test3" className="navLink">
+          <NavLink to="/currency" className="navLink">
             Currency
           </NavLink>
         </li>

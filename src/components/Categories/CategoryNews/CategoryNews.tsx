@@ -1,21 +1,12 @@
-import { useEffect, useState } from 'react';
-import { getNewsByCategory } from './api/api';
+import { useFetchNewsCategory } from './helpers/hooks/useFetchNewsCategory';
+import { CategoryNewsType } from './helpers/type/type';
 
 import Category from '../Category/Category';
 
 import styles from './Index.module.scss';
 
 const CategoryNews = ({ category }: { category: string }) => {
-  const [news, setNews] = useState([]);
-
-  useEffect(() => {
-    const fetchNews = async () => {
-      const data = await getNewsByCategory(category);
-      setNews(data);
-    };
-
-    fetchNews();
-  }, [category]);
+  const news: CategoryNewsType[] = useFetchNewsCategory({ category });
 
   return (
     <div>
@@ -34,7 +25,11 @@ const CategoryNews = ({ category }: { category: string }) => {
                   <h3 className={styles.newsTitle}>{item.title}</h3>
                 </div>
                 <div className={styles.imageWrapper}>
-                  <img src={item.image} alt="" className={styles.newsImage} />
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className={styles.newsImage}
+                  />
                 </div>
               </a>
             </div>
