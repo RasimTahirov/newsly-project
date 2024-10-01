@@ -24,7 +24,12 @@ const CategoryNews = ({ category }: { category: string }) => {
         {news.map((item) => (
           <div key={item.id} className={styles.newsItem}>
             <div className={styles.newsContent}>
-              <a href={item.url} className={styles.newsLink}>
+              <a
+                href={item.url}
+                className={styles.newsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <div className={styles.titleWrapper}>
                   <h3 className={styles.newsTitle}>{item.title}</h3>
                 </div>

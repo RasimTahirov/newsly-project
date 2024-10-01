@@ -8,22 +8,22 @@ const Navigation = () => {
       <ul className="navList">
         <li className="navItem">
           <NavLink to="/" className="navLink">
-            Главная
+            Home
           </NavLink>
         </li>
         <li className="navItem">
           <NavLink to="/news" className="navLink">
-            Новости
+            News
           </NavLink>
         </li>
         <li className="navItem">
           <NavLink to="weather" className="navLink">
-            Погода
+            Weather
           </NavLink>
         </li>
         <li className="navItem">
           <NavLink to="test3" className="navLink">
-            Курс
+            Currency
           </NavLink>
         </li>
       </ul>

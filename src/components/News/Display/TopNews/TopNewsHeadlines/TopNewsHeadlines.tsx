@@ -12,16 +12,18 @@ const TopNewsHeadlines = () => {
       <div className={styles.newsListWrapper}>
         <ul className={styles.newsList}>
           {newsList.map((news) => (
-            <li key={news.uuid} className={styles.newsListItem}>
-              <a
-                href={news.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.newsLink}
-              >
-                {news.title}
-              </a>
-            </li>
+            <div key={news.uuid} className={styles.containerNews}>
+              <li className={styles.newsListItem}>
+                <a
+                  href={news.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.newsLink}
+                >
+                  {news.title}
+                </a>
+              </li>
+            </div>
           ))}
         </ul>
       </div>

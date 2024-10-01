@@ -9,32 +9,32 @@ const Category = () => {
         <ul className={styles.hubMenuList}>
           <li className={styles.hubMenuItem}>
             <Link to="/news/politics" className={styles.hubMenuLink}>
-              Политика
+              Politics
             </Link>
           </li>
           <li className={styles.hubMenuItem}>
             <Link to="/news/world" className={styles.hubMenuLink}>
-              Мир
+              World
             </Link>
           </li>
           <li className={styles.hubMenuItem}>
             <Link to="/news/economy" className={styles.hubMenuLink}>
-              Экономика
+              Economy
             </Link>
           </li>
           <li className={styles.hubMenuItem}>
             <Link to="/news/movie" className={styles.hubMenuLink}>
-              Новости кино
+              Movie News
             </Link>
           </li>
           <li className={styles.hubMenuItem}>
             <Link to="/news/game" className={styles.hubMenuLink}>
-              Новости геймдева
+              Game Dev News
             </Link>
           </li>
           <li className={styles.hubMenuItem}>
             <Link to="/news/sports" className={styles.hubMenuLink}>
-              Спорт
+              Sports
             </Link>
           </li>
         </ul>

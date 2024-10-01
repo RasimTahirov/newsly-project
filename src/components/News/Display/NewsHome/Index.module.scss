@@ -1,33 +1,22 @@
-.background {
+.title {
+  font-size: 54px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 20px;
-  width: 100%;
   margin-bottom: 30px;
 }
 
-.heading {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-}
-
-.image {
-  max-width: 70px;
-  max-height: 70px;
-  rotate: 41deg;
-}
-
-.newsContainer {
+.container {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  padding-bottom: 40px;
 }
 
-.newsItem {
+.newsContent {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  margin: 0 auto;
 }
 
 .newsContent {
