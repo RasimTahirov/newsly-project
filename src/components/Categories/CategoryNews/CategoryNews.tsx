@@ -4,13 +4,20 @@ import { CategoryNewsType } from './helpers/type/type';
 import Category from '../Category/Category';
 
 import styles from './Index.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 const CategoryNews = ({ category }: { category: string }) => {
+  const navigate = useNavigate();
+
   const news: CategoryNewsType[] = useFetchNewsCategory({ category });
+  const goBack = () => navigate(-1);
 
   return (
     <div>
       <Category />
+      <button onClick={goBack} className={styles.arrowBtn}>
+        &larr;
+      </button>
       <div className={styles.newsContainer}>
         {news.map((item) => (
           <div key={item.id} className={styles.newsItem}>
