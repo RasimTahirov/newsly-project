@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import styles from './Index.module.scss';
 import { getNews } from './api/api';
+import { NewsHomeType } from './type/type';
+
+import styles from './Index.module.scss';
 
 const NewsHome = () => {
-  const [news, setNews] = useState([]);
+  const [news, setNews] = useState<NewsHomeType[]>([]);
 
   useEffect(() => {
     const fetchNews = async () => {
@@ -20,12 +22,16 @@ const NewsHome = () => {
       <div className={styles.container}>
         {news.map((item) => (
           <div key={item.id} className={styles.newsContent}>
-            <a href="#!" className={styles.newsLink}>
+            <a href={item.url} className={styles.newsLink}>
               <div className={styles.titleWrapper}>
                 <h3 className={styles.newsTitle}>{item.title}</h3>
               </div>
               <div className={styles.imageWrapper}>
-                <img src={item.image} alt="" className={styles.newsImage} />
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className={styles.newsImage}
+                />
               </div>
             </a>
           </div>

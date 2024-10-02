@@ -10,7 +10,7 @@ const CategoryNews = ({ category }: { category: string }) => {
   const navigate = useNavigate();
 
   const news: CategoryNewsType[] = useFetchNewsCategory({ category });
-  const goBack = () => navigate(-1);
+  const goBack = () => navigate('/news');
 
   return (
     <div>
