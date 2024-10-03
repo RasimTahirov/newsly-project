@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
-import { getTopNews } from '../../../../services/api/api';
+import { getNewsByCategory } from '../api/api';
 
-export const useFetchNews = () => {
+export const useFetchNewsCategory = ({ category }: { category: string }) => {
   const [news, setNews] = useState([]);
 
   useEffect(() => {
     const fetchNews = async () => {
-      const data = await getTopNews();
+      const data = await getNewsByCategory(category);
       setNews(data);
     };
 
     fetchNews();
-  }, []);
+  }, [category]);
 
   return news;
 };
