@@ -22,9 +22,7 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.containerLogo}>
-          <a href="/">
-            <img src={logo} alt="logo" className={styles.logo} />
-          </a>
+          <img src={logo} alt="logo" className={styles.logo} />
         </div>
         <div className={styles.containerTime}>
           <span className={styles.date}>{formattedDate}</span>

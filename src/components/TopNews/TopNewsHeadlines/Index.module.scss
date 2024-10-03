@@ -27,8 +27,8 @@
 }
 
 .newsListItem {
+  list-style: square;
   font-weight: 400;
-  background-color: #eeeeee;
 }
 
 .newsListItem:first-child {
@@ -38,16 +38,8 @@
 .newsLink {
   color: #000;
   transition: 0.3s ease;
-  background-color: #eeeeee;
 }
 
-.containerNews {
-  background-color: #eeeeee;
-  padding: 15px;
-  border-radius: 15px;
-  transition: box-shadow 0.3s ease;
-}
-
-.containerNews:hover {
-  box-shadow: -8px 8px 10px 2px rgba(105, 105, 105, 0.3);
+.newsLink:hover {
+  color: #6e0c0c;
 }
