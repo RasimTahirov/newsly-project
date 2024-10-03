@@ -1,10 +1,10 @@
 import { useFetchNewsCategory } from './helpers/hooks/useFetchNewsCategory';
+import { useNavigate } from 'react-router-dom';
 import { CategoryNewsType } from './helpers/type/type';
 
 import Category from '../Category/Category';
 
 import styles from './Index.module.scss';
-import { useNavigate } from 'react-router-dom';
 
 const CategoryNews = ({ category }: { category: string }) => {
   const navigate = useNavigate();
