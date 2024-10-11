@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 
-import CategoryNewsWrapper from '../../components/Categories/CategoryNewsWrapper/CategoryNewsWrapper';
+import CategoryNewsWrapper from '../../components/News/NewsCategory/CategoryNewsWrapper/CategoryNewsWrapper';
 
 const AppRoutesCategory = () => {
   return (

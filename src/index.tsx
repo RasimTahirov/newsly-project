@@ -6,11 +6,15 @@ import Main from './app/layouts/Main/Main';
 
 import './styles/index.scss';
 import './styles/reset.scss';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 createRoot(document.getElementById('root')!).render(
   // <StrictMode>
   <BrowserRouter>
-    <Main />
+    <Provider store={store}>
+      <Main />
+    </Provider>
   </BrowserRouter>
   // </StrictMode>
 );

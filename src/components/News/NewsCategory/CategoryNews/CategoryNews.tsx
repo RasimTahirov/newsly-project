@@ -1,16 +1,39 @@
-import { useFetchNewsCategory } from './helpers/hooks/useFetchNewsCategory';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CategoryNewsType } from './helpers/type/type';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchNewsCategory } from '../../../../redux/thunk';
+import { AppDispatch, RootState } from '../../../../store/store';
 
 import Category from '../Category/Category';
+import LoadingMessage from '../../../UI/LoadingMessage/LoadingMessage';
+import ErrorMessage from '../../../UI/ErrorMessage/ErrorMessage';
+import ButtonRefresh from '../../../UI/ButtonRefresh/ButtonRefresh';
 
 import styles from './Index.module.scss';
 
 const CategoryNews = ({ category }: { category: string }) => {
   const navigate = useNavigate();
-
-  const news: CategoryNewsType[] = useFetchNewsCategory({ category });
   const goBack = () => navigate('/news');
+  const dispatch = useDispatch<AppDispatch>();
+  const {
+    news: newsList,
+    loading,
+    error,
+  } = useSelector((state: RootState) => state.news);
+
+  useEffect(() => {
+    dispatch(fetchNewsCategory(category));
+  }, [dispatch, category]);
+
+  if (loading) return <LoadingMessage />;
+
+  if (error)
+    return (
+      <>
+        <ErrorMessage />
+        <ButtonRefresh />
+      </>
+    );
 
   return (
     <div>
@@ -19,7 +42,7 @@ const CategoryNews = ({ category }: { category: string }) => {
         &larr;
       </button>
       <div className={styles.newsContainer}>
-        {news.map((item) => (
+        {newsList.map((item) => (
           <div key={item.id} className={styles.newsItem}>
             <div className={styles.newsContent}>
               <a
