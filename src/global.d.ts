@@ -36,6 +36,8 @@ declare module '*.scss' {
 interface ImportMetaEnv {
   readonly VITE_BASE_URL: string;
   readonly VITE_API_KEYS: string;
+  readonly VITE_API_KEYS_WEATHER: string;
+  readonly VITE_BASE_URL_WEATHER: string;
 }
 
 interface ImportMeta {

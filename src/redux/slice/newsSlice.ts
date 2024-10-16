@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { newsReducers } from './reducers';
+import { newsReducers } from '../reducers';
 
 interface newsItem {
   id: number;

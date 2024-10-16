@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchNewsCategory } from '../../../../redux/thunk';
 import { AppDispatch, RootState } from '../../../../store/store';
 
 import Category from '../Category/Category';
@@ -10,6 +9,7 @@ import ErrorMessage from '../../../UI/ErrorMessage/ErrorMessage';
 import ButtonRefresh from '../../../UI/ButtonRefresh/ButtonRefresh';
 
 import styles from './Index.module.scss';
+import { fetchNewsCategory } from '../../../../redux/thunks/newsThunk';
 
 const CategoryNews = ({ category }: { category: string }) => {
   const navigate = useNavigate();

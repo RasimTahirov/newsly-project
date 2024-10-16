@@ -1,13 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchNews } from '../services/api/api';
+import { fetchNews } from '../../services/api/api';
 
-export const fetchNewsTest = createAsyncThunk(
-  'news/fetchNewsTest',
-  async () => {
-    const res = await fetchNews('general');
-    return res;
-  }
-);
+export const fetchNewsTop = createAsyncThunk('news/fetchNewsTest', async () => {
+  const res = await fetchNews('general');
+  return res;
+});
 
 export const fetchNewsCategory = createAsyncThunk(
   'news/fetchNewsCategory',

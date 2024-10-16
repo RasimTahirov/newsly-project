@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchNewsTest } from '../../../redux/thunk';
 import { AppDispatch, RootState } from '../../../store/store';
 
 import Category from '../NewsCategory/Category/Category';
@@ -9,6 +8,7 @@ import ErrorMessage from '../../UI/ErrorMessage/ErrorMessage';
 import LoadingMessage from '../../UI/LoadingMessage/LoadingMessage';
 
 import styles from './Index.module.scss';
+import { fetchNewsTop } from '../../../redux/thunks/newsThunk';
 
 const LiveNews = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -19,7 +19,7 @@ const LiveNews = () => {
   } = useSelector((state: RootState) => state.news);
 
   useEffect(() => {
-    dispatch(fetchNewsTest());
+    dispatch(fetchNewsTop());
   }, [dispatch]);
 
   if (loading) return <LoadingMessage />;

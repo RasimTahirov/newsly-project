@@ -1,0 +1,59 @@
+.containerWeather {
+  background-color: #eeeeee;
+  border-radius: 10px;
+  height: 400px;
+  padding: 10px 20px;
+  margin-bottom: 30px;
+}
+
+.weatherColumns {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  height: 100%;
+}
+
+.cityTitle {
+  font-size: 44px;
+  font-weight: 500;
+}
+
+.weatherDashboard {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.weatherDetails {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.weatherDetailsText {
+  opacity: 0.6;
+}
+
+.weatherCurrentWidget {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+
+.weatherDetailsCurrent {
+  display: grid;
+}
+
+.imgWeather {
+  width: 190px;
+}
+
+.weatherDetailsCurrentText {
+  display: flex;
+  justify-content: center;
+}
+
+.currentTemperature {
+  font-size: 85px;
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,47 @@
+.weatherForecastContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.weatherForecas {
+  background-color: #eeeeee;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.dateContainer {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.dayOfTheWeek {
+  font-weight: 500;
+}
+
+.date {
+  opacity: 0.6;
+}
+
+.iconWeatherContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.iconWeather {
+  width: 44px;
+}
+
+.weather {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.weatherDescription {
+  font-size: 14px;
+  display: flex;
+}
