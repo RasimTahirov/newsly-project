@@ -53,6 +53,7 @@ const LiveNews = () => {
                   <img
                     src={item.image}
                     alt={item.title}
+                    loading="lazy"
                     className={styles.newsImage}
                   />
                 </div>

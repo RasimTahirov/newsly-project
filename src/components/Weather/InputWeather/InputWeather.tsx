@@ -1,18 +1,33 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../../store/store';
+import { fetchWeatherData } from '../../../redux/thunks/weatherThunk';
 
-import search from '../assets/search.svg';
+import searchIcon from '../assets/search.svg';
 
 import styles from './Index.module.scss';
-import { fetchWeatherData } from '../../../redux/thunks/weatherThunk';
 
 const InputWeather = () => {
   const [value, setValue] = useState('');
   const dispatch = useDispatch<AppDispatch>();
 
+  const loadDefaultCityWeather = (city: string) => {
+    dispatch(fetchWeatherData(city));
+    setValue(city);
+  };
+
+  useEffect(() => {
+    const saveCity = localStorage.getItem('city');
+    if (saveCity) {
+      loadDefaultCityWeather(saveCity);
+    } else {
+      loadDefaultCityWeather('New-York');
+    }
+  }, [dispatch]);
+
   const handleButtonClick = () => {
     dispatch(fetchWeatherData(value));
+    localStorage.setItem('city', value);
   };
 
   const handleInputKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -37,7 +52,7 @@ const InputWeather = () => {
         className={styles.inputWeather}
       />
       <button className={styles.searchWeather} onClick={handleButtonClick}>
-        <img src={search} alt="search" />
+        <img src={searchIcon} alt="search" />
       </button>
     </div>
   );
