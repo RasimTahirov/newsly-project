@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { weatherForecastReducers, weatherReducers } from '../reducers';
+import { weatherCurrentReducers } from '../reducers';
 
-export interface weatherData {
+export interface WeatherState {
   city: string;
   temp: number;
   windDir: string;
@@ -9,28 +9,31 @@ export interface weatherData {
   humidity: number;
   weatherText: string;
   imageWeather: string;
-}
-
-export interface WeatherDataState {
-  weather: weatherData[];
+  isDay: boolean;
   loading: boolean;
   error: null | undefined | string;
 }
 
-const initialState: WeatherDataState = {
-  weather: [],
+const initialState: WeatherState = {
+  city: '',
+  temp: 0,
+  windDir: '',
+  windKph: 0,
+  humidity: 0,
+  weatherText: '',
+  imageWeather: '',
+  isDay: false,
   loading: false,
   error: null,
 };
 
-const weatherSlice = createSlice({
+const weatherCurrentSlice = createSlice({
   name: 'weather',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    weatherReducers(builder);
-    weatherForecastReducers(builder);
+    weatherCurrentReducers(builder);
   },
 });
 
-export default weatherSlice.reducer;
+export default weatherCurrentSlice.reducer;

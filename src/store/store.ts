@@ -1,11 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
+
 import newsReducer from '../redux/slice/newsSlice';
-import weatherReducer from '../redux/slice/weatherSlice';
+import weatherCurrentReducer from '../redux/slice/weatherSlice';
+import weatherForecastReducer from '../redux/slice/weatherForecastSlice';
 
 export const store = configureStore({
   reducer: {
     news: newsReducer,
-    weather: weatherReducer,
+    weather: weatherCurrentReducer,
+    weatherForecast: weatherForecastReducer,
   },
 });
 

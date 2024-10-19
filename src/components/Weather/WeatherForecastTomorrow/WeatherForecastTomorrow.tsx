@@ -1,3 +1,4 @@
+import { RootState } from '../../../store/store';
 import { useSelector } from 'react-redux';
 import { formateTemperature } from '../../../utils/formateTemperature';
 
@@ -5,7 +6,7 @@ import styles from './Index.module.scss';
 
 const WeatherForecastTomorrow = () => {
   const { tempMax, iconWeatherForecast, weatherDescription, dateForecast } =
-    useSelector((state) => state.weather);
+    useSelector((state: RootState) => state.weatherForecast);
 
   const apiDate = new Date(dateForecast);
 

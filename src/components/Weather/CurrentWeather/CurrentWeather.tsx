@@ -1,8 +1,13 @@
 import { useSelector } from 'react-redux';
+import { RootState } from '../../../store/store';
 import { formateTemperature } from '../../../utils/formateTemperature';
 
 import windImg from '../../../../public/assets/icon/wind.svg';
 import humidityImg from '../../../../public/assets/icon/humidity.svg';
+
+import LoadingMessage from '../../UI/LoadingMessage/LoadingMessage';
+import ErrorMessage from '../../UI/ErrorMessage/ErrorMessage';
+import ButtonRefresh from '../../UI/ButtonRefresh/ButtonRefresh';
 
 import styles from './Index.module.scss';
 
@@ -17,9 +22,21 @@ const CurrentWeather = () => {
     imageWeather,
     loading,
     error,
-  } = useSelector((state) => state.weather);
+  } = useSelector((state: RootState) => state.weather);
 
   const temperature = formateTemperature(temp);
+
+  if (loading) {
+    return <LoadingMessage />;
+  }
+
+  if (error) {
+    return (
+      <>
+        <ErrorMessage /> <ButtonRefresh />
+      </>
+    );
+  }
 
   return (
     <div className={styles.containerWeather}>
