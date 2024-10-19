@@ -1,4 +1,4 @@
-import ThreeDayForecast from './ThreeDayForecast/ThreeDayForecast';
+import WeatherForecastTomorrow from './WeatherForecastTomorrow/WeatherForecastTomorrow';
 import CurrentWeather from './CurrentWeather/CurrentWeather';
 import InputWeather from './InputWeather/InputWeather';
 
@@ -9,7 +9,7 @@ const WeatherComponents = () => {
     <div className={styles.containerWeather}>
       <InputWeather />
       <CurrentWeather />
-      <ThreeDayForecast />
+      <WeatherForecastTomorrow />
     </div>
   );
 };

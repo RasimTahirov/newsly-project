@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../store/store';
+import { formateTemperature } from '../../../utils/formateTemperature';
 
-import windImg from '../assets/wind.svg';
-import humidityImg from '../assets/humidity.svg';
+import windImg from '../../../../public/assets/icon/wind.svg';
+import humidityImg from '../../../../public/assets/icon/humidity.svg';
 
 import styles from './Index.module.scss';
 
@@ -17,11 +17,9 @@ const CurrentWeather = () => {
     imageWeather,
     loading,
     error,
-  } = useSelector((state: RootState) => state.weather);
+  } = useSelector((state) => state.weather);
 
-  const tempTest = Math.floor(Number(temp));
-
-  const formatTemp = tempTest >= 0 ? `+${tempTest}` : `${tempTest}`;
+  const temperature = formateTemperature(temp);
 
   return (
     <div className={styles.containerWeather}>
@@ -44,7 +42,7 @@ const CurrentWeather = () => {
             <span className={styles.weatherDetailsCurrentText}>
               {weatherText}
             </span>
-            <span className={styles.currentTemperature}>{formatTemp}°</span>
+            <span className={styles.currentTemperature}>{temperature}°</span>
           </div>
         </div>
       </div>

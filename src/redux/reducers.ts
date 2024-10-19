@@ -2,9 +2,12 @@ import { NewsState } from './slice/newsSlice';
 import { ActionReducerMapBuilder } from '@reduxjs/toolkit';
 import {
   getCustomWeatherIconPatchDay,
-  getCustomWeatherIconPatchNigth,
+  getCustomWeatherIconPatchNight,
 } from '../utils/getCustomIconWeather';
-import { fetchWeatherData } from './thunks/weatherThunk';
+import {
+  fetchWeatherData,
+  fetchWeatherDataForecast,
+} from './thunks/weatherThunk';
 import { fetchNewsCategory, fetchNewsTop } from './thunks/newsThunk';
 
 export const newsReducers = (builder: ActionReducerMapBuilder<NewsState>) => {
@@ -58,12 +61,36 @@ export const weatherReducers = (builder) => {
           action.payload.current.condition.text
         );
       } else {
-        state.imageWeather = getCustomWeatherIconPatchNigth(
+        state.imageWeather = getCustomWeatherIconPatchNight(
           action.payload.current.condition.text
         );
       }
     })
     .addCase(fetchWeatherData.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message;
+    });
+};
+
+export const weatherForecastReducers = (builder) => {
+  builder
+    .addCase(fetchWeatherDataForecast.pending, (state) => {
+      state.loading = true;
+      state.error = null;
+    })
+    .addCase(fetchWeatherDataForecast.fulfilled, (state, action) => {
+      state.loading = false;
+      state.tempMax = action.payload.forecast.forecastday[1].day.maxtemp_c;
+      state.tempMin = action.payload.forecast.forecastday[1].day.mintemp_c;
+      state.weatherDescription =
+        action.payload.forecast.forecastday[1].day.condition.text;
+      state.dateForecast = action.payload.forecast.forecastday[1].date;
+
+      state.iconWeatherForecast = getCustomWeatherIconPatchDay(
+        action.payload.forecast.forecastday[1].day.condition.text
+      );
+    })
+    .addCase(fetchWeatherDataForecast.rejected, (state, action) => {
       state.loading = false;
       state.error = action.error.message;
     });

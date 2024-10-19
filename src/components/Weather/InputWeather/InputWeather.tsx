@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../../store/store';
-import { fetchWeatherData } from '../../../redux/thunks/weatherThunk';
+import {
+  fetchWeatherData,
+  fetchWeatherDataForecast,
+} from '../../../redux/thunks/weatherThunk';
 
-import searchIcon from '../assets/search.svg';
+import searchIcon from '../../../../public/assets/icon/search.svg';
 
 import styles from './Index.module.scss';
 
@@ -13,6 +16,7 @@ const InputWeather = () => {
 
   const loadDefaultCityWeather = (city: string) => {
     dispatch(fetchWeatherData(city));
+    dispatch(fetchWeatherDataForecast(city));
     setValue(city);
   };
 
@@ -27,6 +31,7 @@ const InputWeather = () => {
 
   const handleButtonClick = () => {
     dispatch(fetchWeatherData(value));
+    dispatch(fetchWeatherDataForecast(value));
     localStorage.setItem('city', value);
   };
 
