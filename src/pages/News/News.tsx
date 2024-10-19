@@ -1,4 +1,3 @@
-// import Category from '../../components/Category/Category';
 import LiveNews from '../../components/News/LiveNews/NewsHome';
 
 import styles from './Index.module.scss';

@@ -1,0 +1,61 @@
+.forecastTitle {
+  font-size: 20px;
+  padding: 0 10px;
+  font-weight: 500;
+}
+
+.weatherForecast {
+  background-color: #eeeeee;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.weatherContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dateInfo {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weekday {
+  font-weight: 500;
+}
+
+.date {
+  opacity: 0.6;
+}
+
+.description {
+  font-size: 1rem;
+  display: flex;
+  justify-self: center;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.temperatureContainer {
+  display: grid;
+}
+
+.weatherIcon {
+  width: 75px;
+  justify-self: end;
+}
+
+.temperature {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.weatherDescriptionContainer {
+  display: grid;
+  justify-items: center;
+}

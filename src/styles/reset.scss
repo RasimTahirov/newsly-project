@@ -38,6 +38,7 @@ h6,
 p {
   font-size: inherit;
   font-weight: inherit;
+  background-color: transparent;
 }
 
 ul,
@@ -100,4 +101,12 @@ label {
 
 legend {
   display: block;
+}
+
+div,
+time,
+article,
+span,
+img {
+  background-color: transparent;
 }
