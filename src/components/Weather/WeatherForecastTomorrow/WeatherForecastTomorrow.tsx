@@ -5,6 +5,7 @@ import { formateTemperature } from '../../../utils/formateTemperature';
 import styles from './Index.module.scss';
 
 const WeatherForecastTomorrow = () => {
+
   const {
     tempMax,
     iconWeatherForecast,
@@ -12,6 +13,10 @@ const WeatherForecastTomorrow = () => {
     dateForecast,
     loading,
   } = useSelector((state: RootState) => state.weatherForecast);
+
+  const { tempMax, iconWeatherForecast, weatherDescription, dateForecast } =
+    useSelector((state: RootState) => state.weatherForecast);
+
 
   const apiDate = new Date(dateForecast);
 
@@ -26,9 +31,11 @@ const WeatherForecastTomorrow = () => {
 
   const temperature = formateTemperature(tempMax);
 
+
   if (loading) {
     return <></>;
   }
+
 
   return (
     <>
